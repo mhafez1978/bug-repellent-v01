@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Ultrasonic Bug Repellent"
+description = "A responsive browser-based ultrasonic repellent control panel with a tactile frequency and strength lever, presets, signal visualization, and honest device capability guidance for laptops and phones."
+version = "1.0.0"
+id = "artifacts/ultrasonic-bug-repellent"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 24049
+
+[services.development]
+run = "pnpm --filter @workspace/ultrasonic-bug-repellent run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/ultrasonic-bug-repellent", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/ultrasonic-bug-repellent/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "24049"
+BASE_PATH = "/"
