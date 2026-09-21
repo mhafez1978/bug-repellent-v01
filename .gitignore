@@ -1,1 +1,11 @@
 node_modules
+
+# Local SSH key backups — never commit (keep only on this machine)
+ssh-backup/
+**/.ssh/
+id_ed25519
+id_rsa
+id_github
+hetznerkey
+hetzner_cpanel4life
+oracle_cloud_vm
