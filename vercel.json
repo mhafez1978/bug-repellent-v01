@@ -1,0 +1,6 @@
+{
+  "framework": "vite",
+  "installCommand": "pnpm install --frozen-lockfile",
+  "buildCommand": "PORT=5173 BASE_PATH=/ pnpm --filter @workspace/ultrasonic-bug-repellent run build",
+  "outputDirectory": "artifacts/ultrasonic-bug-repellent/dist/public"
+}
